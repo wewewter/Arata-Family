@@ -1,0 +1,35 @@
+<?php 
+    session_start();
+    if(isset($_POST['logout'])){
+        session_unset();
+        session_destroy();
+        header("location: index.php");
+    }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/9132fbc39f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <div>
+                <img src="Arata logo.jpeg">
+            </div>
+                <a href="https://www.instagram.com/squad_arata/?hl=id"><li class="fa-brands fa-instagram"></li></a>
+                <a href="https://www.youtube.com/channel/UCVsZqSmG-hcHW4NnvvdIJJg"><li class="fa-brands fa-youtube"></li></a>
+                <a href="https://www.tiktok.com/@arata_family?_t=8o5VLJ9Vt4r&_r=1"><li class="fa-brands fa-tiktok"></li></a>
+            <li>
+                <form action="dashboard.php" method="POST">
+                <button type="submit" name="logout">logout </button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
